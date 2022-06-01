@@ -8,9 +8,25 @@ public class PlayerMove : MonoBehaviour
     public Rigidbody rb;
     private Vector3 moveDir;
 
+    public GameObject Holder;
+    public Animator animator;
+
+    void Start()
+    {
+        animator = Holder.GetComponent<Animator>();
+    }
+
     private void FixedUpdate()
     {
         Move();
+        if (Input.GetButton("Fire1"))
+        {
+            Debug.Log("fire");
+            animator.SetTrigger("Chop");
+        }
+            
+        
+
     }
 
     void ProcessInputs()

@@ -19,7 +19,7 @@ public class PlayerFeels : MonoBehaviour
     {
         
     }
-
+    //Make a public feedbacks and make a new game object to hold the feed backs. Must create a animation event to refernce the void
     public virtual void Change()
     {
         ChangeWalk?.PlayFeedbacks();
