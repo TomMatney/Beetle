@@ -24,9 +24,6 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("fire");
             animator.SetTrigger("Chop");
         }
-            
-        
-
     }
 
     void ProcessInputs()
@@ -42,7 +39,6 @@ public class PlayerMove : MonoBehaviour
         rb.velocity = moveDir * moveSpeed;
     }
 
-    // Update is called once per frame
     void Update()
     {
         ProcessInputs();
