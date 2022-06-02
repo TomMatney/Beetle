@@ -21,7 +21,6 @@ public class PlayerMove : MonoBehaviour
         Move();
         if (Input.GetButton("Fire1"))
         {
-            Debug.Log("fire");
             animator.SetTrigger("Chop");
         }
     }

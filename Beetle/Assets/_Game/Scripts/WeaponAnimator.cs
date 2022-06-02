@@ -13,7 +13,7 @@ class WeaponAnimator : MonoBehaviour
         [SerializeField] public Vector3 endDirection = new Vector3(.7f, 0f, .7f);
     }
 
-    [SerializeField] private DamageDealer swordDamageDealer = default;
+    //[SerializeField] private DamageDealer swordDamageDealer = default;
 
     [SerializeField] private AudioClip slashAttackSound = default;
 
@@ -42,7 +42,8 @@ class WeaponAnimator : MonoBehaviour
     private void Start()
     {
         originalSwordTrail.emitting = false;
-        swordDamageDealer.enabled = false;
+        weaponTransform.gameObject.SetActive(false);
+        //swordDamageDealer.enabled = false;
         defaultPosition = weaponTransform.localPosition;
         defaultRotation = weaponTransform.localEulerAngles;
     }
@@ -87,7 +88,7 @@ class WeaponAnimator : MonoBehaviour
             AudioSource.PlayClipAtPoint(slashAttackSound, transform.position);
         }
 
-        swordDamageDealer.enabled = true;
+        weaponTransform.gameObject.SetActive(true);
 
         TrailRenderer swordTrail = Instantiate(originalSwordTrail, originalSwordTrail.transform.parent);
 
@@ -106,7 +107,7 @@ class WeaponAnimator : MonoBehaviour
         swordTrail.transform.parent = null;
         Destroy(swordTrail.gameObject, 0.3f);
 
-        swordDamageDealer.enabled = false;
+        weaponTransform.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(attackCooldownTime);
         //lastAttackTime = Time.time;

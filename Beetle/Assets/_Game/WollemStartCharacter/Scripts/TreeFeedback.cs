@@ -10,6 +10,5 @@ public class TreeFeedback : MonoBehaviour
     public virtual void Tree()
     {
         treeFeels?.PlayFeedbacks();
-        Debug.Log("TREEEE");
     }
 }
