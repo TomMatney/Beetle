@@ -654,6 +654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 640943748}
   - component: {fileID: 640943747}
+  - component: {fileID: 640943749}
   m_Layer: 0
   m_Name: Feels
   m_TagString: Untagged
@@ -712,8 +713,8 @@ MonoBehaviour:
   - rid: 7413793645053345816
   - rid: 7413793645053345822
   - rid: 7413793645053345827
-  - rid: 7413793645053345845
-  - rid: 7413793645053345864
+  - rid: 7413793708303187978
+  - rid: 7413793708303187983
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   references:
@@ -826,7 +827,11 @@ MonoBehaviour:
         DebugActive: 0
         TargetAudioSource: {fileID: 1936889959}
         Mode: 0
-        RandomSfx: []
+        RandomSfx:
+        - {fileID: 8300000, guid: 7836c4035ed326f43ab83191d6f70483, type: 3}
+        - {fileID: 8300000, guid: 69d8d4ce2c3df154a99cb16d81a664a6, type: 3}
+        - {fileID: 8300000, guid: c69c030a7d963cf4994a8f0af58aacda, type: 3}
+        - {fileID: 8300000, guid: 6d6d26c9b64a8144b819595ede94c623, type: 3}
         MinVolume: 1
         MaxVolume: 1
         MinPitch: 1
@@ -869,11 +874,11 @@ MonoBehaviour:
         MoveToPosition: 0
         ActivateOnPlay: 0
         StopSystemOnInit: 1
-    - rid: 7413793645053345845
+    - rid: 7413793708303187978
       type: {class: MMF_CameraShake, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: 59059342
+        UniqueID: 2120460831
         Label: Camera Shake
         Channel: 0
         Chance: 100
@@ -903,17 +908,17 @@ MonoBehaviour:
         RepeatUntilStopped: 0
         CameraShakeProperties:
           Duration: 0.1
-          Amplitude: 3
+          Amplitude: 0.2
           Frequency: 40
           AmplitudeX: 0
           AmplitudeY: 0
           AmplitudeZ: 0
-    - rid: 7413793645053345864
-      type: {class: MMF_Wiggle, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
+    - rid: 7413793708303187983
+      type: {class: MMF_FreezeFrame, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: -1883979083
-        Label: Wiggle
+        UniqueID: 770817701
+        Label: Freeze Frame
         Channel: 0
         Chance: 100
         DisplayColor: {r: 0, g: 0, b: 0, a: 1}
@@ -939,13 +944,8 @@ MonoBehaviour:
           TargetBPM: 120
         Owner: {fileID: 640943747}
         DebugActive: 0
-        TargetWiggle: {fileID: 1936889960}
-        WigglePosition: 1
-        WigglePositionDuration: 0.5
-        WiggleRotation: 0
-        WiggleRotationDuration: 0
-        WiggleScale: 0
-        WiggleScaleDuration: 0
+        FreezeFrameDuration: 0.1
+        MinimumTimescaleThreshold: 0.5
 --- !u!4 &640943748
 Transform:
   m_ObjectHideFlags: 0
@@ -961,6 +961,26 @@ Transform:
   m_Father: {fileID: 1936889957}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &640943749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640943746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7de9ef06f04864391a928af29f4b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NormalTimescale: 1
+  DefaultLerpSpeed: 1
+  DefaultLerpTimescale: 0
+  CurrentTimeScale: 1
+  TargetTimeScale: 1
+  LerpTimescale: 1
+  LerpSpeed: 0
+  TestButton: 0
 --- !u!1 &654432925
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,7 +3088,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c8287a8e9e0d6c2428e248437b6e09d9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7836c4035ed326f43ab83191d6f70483, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -8415,10 +8435,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4382847831902897056, guid: 98cea97f32777cc439de885bab5ea707, type: 3}
-      propertyPath: TreeScript
-      value: 
-      objectReference: {fileID: 1936889955}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 98cea97f32777cc439de885bab5ea707, type: 3}
