@@ -1,0 +1,5 @@
+A sound pack with 12 loose chopping sounds and a premade sequence. There are 6 chops with swing and 6 times the bare axe sound. 
+
+All samples are 44.1kHz wav files at -0.3db output.
+
+For further information or questions please contact me at michael.teusch@gmail.com

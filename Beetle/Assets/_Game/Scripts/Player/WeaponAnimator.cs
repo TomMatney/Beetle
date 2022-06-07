@@ -108,7 +108,7 @@ class WeaponAnimator : MonoBehaviour
 
         swordTrail.emitting = false;
         swordTrail.transform.parent = null;
-        Destroy(swordTrail.gameObject, 0.3f);
+        Destroy(swordTrail.gameObject, 0.05f);
 
         weaponTransform.gameObject.SetActive(false);
 
