@@ -19,10 +19,6 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        if (Input.GetButton("Fire1"))
-        {
-            animator.SetTrigger("Chop");
-        }
     }
 
     void ProcessInputs()

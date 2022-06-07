@@ -639,7 +639,7 @@ Transform:
   - {fileID: 7194788181604240038}
   - {fileID: 7194788182131316799}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7194788181980478341
 MonoBehaviour:
@@ -1664,6 +1664,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4382847831902897056, guid: 98cea97f32777cc439de885bab5ea707, type: 3}
+      propertyPath: pFeel
+      value: 
+      objectReference: {fileID: 7194788182345191417}
     - target: {fileID: 4382847831902897056, guid: 98cea97f32777cc439de885bab5ea707, type: 3}
       propertyPath: damageAmount
       value: 34
