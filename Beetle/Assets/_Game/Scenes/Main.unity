@@ -362,6 +362,7 @@ MonoBehaviour:
   DebugActive: 0
   FeedbacksList:
   - rid: 3175683304760541199
+  - rid: 7413793757643145280
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   references:
@@ -399,18 +400,75 @@ MonoBehaviour:
         Owner: {fileID: 251747344}
         DebugActive: 0
         BoundAnimator: {fileID: 1723904462}
-        UpdateTrigger: 1
+        UpdateTrigger: 0
         TriggerMode: 0
         TriggerParameterName: Choper
         UpdateRandomTrigger: 0
         RandomTriggerMode: 0
         RandomTriggerParameterNames: []
-        UpdateBool: 0
-        BoolParameterName: 
+        UpdateBool: 1
+        BoolParameterName: Abool
         BoolParameterValue: 1
         UpdateRandomBool: 0
-        RandomBoolParameterValue: 1
+        RandomBoolParameterValue: 0
         RandomBoolParameterNames: []
+        IntValueMode: 0
+        IntParameterName: 
+        IntValue: 0
+        IntValueMin: 0
+        IntValueMax: 5
+        IntIncrement: 1
+        FloatValueMode: 0
+        FloatParameterName: 
+        FloatValue: 0
+        FloatValueMin: 0
+        FloatValueMax: 5
+        FloatIncrement: 1
+    - rid: 7413793757643145280
+      type: {class: MMF_Animation, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
+      data:
+        Active: 1
+        UniqueID: 1001114239
+        Label: Animation
+        Channel: 0
+        Chance: 100
+        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        Timing:
+          TimescaleMode: 0
+          ExcludeFromHoldingPauses: 0
+          ContributeToTotalDuration: 1
+          InitialDelay: 1
+          CooldownDuration: 0
+          InterruptsOnStop: 1
+          NumberOfRepeats: 0
+          RepeatForever: 0
+          DelayBetweenRepeats: 1
+          MMFeedbacksDirectionCondition: 0
+          PlayDirection: 0
+          ConstantIntensity: 0
+          UseIntensityInterval: 0
+          IntensityIntervalMin: 0
+          IntensityIntervalMax: 0
+          Sequence: {fileID: 0}
+          TrackID: 0
+          Quantized: 0
+          TargetBPM: 120
+        Owner: {fileID: 251747344}
+        DebugActive: 0
+        BoundAnimator: {fileID: 1723904462}
+        UpdateTrigger: 0
+        TriggerMode: 0
+        TriggerParameterName: 
+        UpdateRandomTrigger: 0
+        RandomTriggerMode: 0
+        RandomTriggerParameterNames: []
+        UpdateBool: 1
+        BoolParameterName: Abool
+        BoolParameterValue: 0
+        UpdateRandomBool: 0
+        RandomBoolParameterValue: 1
+        RandomBoolParameterNames:
+        - 
         IntValueMode: 0
         IntParameterName: 
         IntValue: 0
@@ -866,7 +924,7 @@ MonoBehaviour:
         RepeatUntilStopped: 0
         CameraShakeProperties:
           Duration: 0.2
-          Amplitude: 1
+          Amplitude: 2
           Frequency: 40
           AmplitudeX: 0
           AmplitudeY: 0
@@ -2638,7 +2696,7 @@ MonoBehaviour:
     FrequencyMin: 0
     FrequencyMax: 1
     AmplitudeMin: {x: 0, y: 0, z: 0}
-    AmplitudeMax: {x: 1, y: 1, z: 1}
+    AmplitudeMax: {x: 0, y: 0, z: 0}
     RelativeAmplitude: 1
     UniformValues: 0
     Curve:
@@ -2702,7 +2760,7 @@ MonoBehaviour:
     LimitedTimeResetValue: 1
     LimitedTimeLeft: 0
     NoiseFrequencyMin: {x: 0, y: 0, z: 0}
-    NoiseFrequencyMax: {x: 1, y: 1, z: 1}
+    NoiseFrequencyMax: {x: 0, y: 0, z: 0}
     NoiseShiftMin: {x: 0, y: 0, z: 0}
     NoiseShiftMax: {x: 0, y: 0, z: 0}
   RotationWiggleProperties:
