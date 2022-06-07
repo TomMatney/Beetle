@@ -10117,7 +10117,6 @@ MonoBehaviour:
         m_Calls: []
   DebugActive: 0
   FeedbacksList:
-  - rid: 3175683190612557857
   - rid: 3175683190612557858
   - rid: 3175683190612557859
   - rid: 3175683190612557860
@@ -10127,80 +10126,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3175683190612557857
-      type: {class: MMF_SquashAndStretch, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
-      data:
-        Active: 0
-        UniqueID: 53286115
-        Label: Squash and Stretch
-        Channel: 0
-        Chance: 100
-        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
-        Timing:
-          TimescaleMode: 0
-          ExcludeFromHoldingPauses: 0
-          ContributeToTotalDuration: 1
-          InitialDelay: 0
-          CooldownDuration: 0
-          InterruptsOnStop: 1
-          NumberOfRepeats: 0
-          RepeatForever: 0
-          DelayBetweenRepeats: 1
-          MMFeedbacksDirectionCondition: 0
-          PlayDirection: 0
-          ConstantIntensity: 0
-          UseIntensityInterval: 0
-          IntensityIntervalMin: 0
-          IntensityIntervalMax: 0
-          Sequence: {fileID: 0}
-          TrackID: 0
-          Quantized: 0
-          TargetBPM: 120
-        Owner: {fileID: 640943747}
-        DebugActive: 0
-        SquashAndStretchTarget: {fileID: 1936889957}
-        Mode: 0
-        Axis: 3
-        AnimateScaleDuration: 0.2
-        RemapCurveZero: 1
-        RemapCurveOne: 2
-        Offset: 0
-        AnimateCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 0.3
-            value: 1.5
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        AllowAdditivePlays: 0
-        DetermineScaleOnPlay: 0
-        DestinationScale: 2
     - rid: 3175683190612557858
       type: {class: MMF_AudioSource, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
@@ -10347,9 +10272,9 @@ MonoBehaviour:
         DebugActive: 0
         RepeatUntilStopped: 0
         CameraShakeProperties:
-          Duration: 0.2
-          Amplitude: 2
-          Frequency: 40
+          Duration: 0.4
+          Amplitude: 15
+          Frequency: 10
           AmplitudeX: 0
           AmplitudeY: 0
           AmplitudeZ: 0
@@ -12587,6 +12512,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHold (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7194788182131316793, guid: b84af361849d182458cd82b965df3b7b, type: 3}
+      propertyPath: PositionActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194788182131316793, guid: b84af361849d182458cd82b965df3b7b, type: 3}
+      propertyPath: PositionWiggleProperties.WiggleType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194788182131316793, guid: b84af361849d182458cd82b965df3b7b, type: 3}
+      propertyPath: PositionWiggleProperties.FrequencyMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194788182131316793, guid: b84af361849d182458cd82b965df3b7b, type: 3}
+      propertyPath: PositionWiggleProperties.AmplitudeMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194788182131316793, guid: b84af361849d182458cd82b965df3b7b, type: 3}
+      propertyPath: PositionWiggleProperties.AmplitudeMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194788182131316793, guid: b84af361849d182458cd82b965df3b7b, type: 3}
+      propertyPath: PositionWiggleProperties.AmplitudeMax.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: b84af361849d182458cd82b965df3b7b, type: 3}
@@ -12776,7 +12725,7 @@ MonoBehaviour:
   ScaleActive: 0
   PositionWiggleProperties:
     WigglePermitted: 0
-    WiggleType: 2
+    WiggleType: 3
     UseUnscaledTime: 1
     StartWigglingAutomatically: 1
     SmoothPingPong: 0
@@ -12808,7 +12757,7 @@ MonoBehaviour:
     FrequencyMin: 0
     FrequencyMax: 1
     AmplitudeMin: {x: 0, y: 0, z: 0}
-    AmplitudeMax: {x: 1, y: 1, z: 1}
+    AmplitudeMax: {x: 0, y: 0, z: 0}
     RelativeAmplitude: 1
     UniformValues: 0
     Curve:
@@ -12872,7 +12821,7 @@ MonoBehaviour:
     LimitedTimeResetValue: 1
     LimitedTimeLeft: 0
     NoiseFrequencyMin: {x: 0, y: 0, z: 0}
-    NoiseFrequencyMax: {x: 1, y: 1, z: 1}
+    NoiseFrequencyMax: {x: 0, y: 0, z: 0}
     NoiseShiftMin: {x: 0, y: 0, z: 0}
     NoiseShiftMax: {x: 0, y: 0, z: 0}
   RotationWiggleProperties:
@@ -13090,7 +13039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248021b3e83e2424d8aed6c42ebaddf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 100000
   damageCooldown: 0.2
   invulnerable: 0
   allRenderers: []
