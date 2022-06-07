@@ -6,11 +6,20 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class DamageDealer : MonoBehaviour
 {
+    public LayerMask layerMask;
+    public float damageAmount = 10f;
+
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Gatherable")
+        if (layerMask.IsInLayerMask(collision.gameObject.layer) == false)
         {
-            collision.gameObject.GetComponent<TreeFeedback>().Tree();
+            return;
+        }
+
+        Health health = collision.GetComponent<Health>();
+        if (health != null)
+        {
+            health.Damage(transform.root.gameObject, damageAmount, transform.position, transform.forward);
         }
     }
 }
