@@ -401,7 +401,7 @@ MonoBehaviour:
         BoundAnimator: {fileID: 1723904462}
         UpdateTrigger: 1
         TriggerMode: 0
-        TriggerParameterName: Change
+        TriggerParameterName: Choper
         UpdateRandomTrigger: 0
         RandomTriggerMode: 0
         RandomTriggerParameterNames: []
@@ -8360,6 +8360,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4382847831902897056, guid: 98cea97f32777cc439de885bab5ea707, type: 3}
+      propertyPath: pFeel
+      value: 
+      objectReference: {fileID: 1723904461}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 98cea97f32777cc439de885bab5ea707, type: 3}
