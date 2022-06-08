@@ -10,6 +10,7 @@ public abstract class ItemData : ScriptableObject
     public int Id;
     public Sprite Icon;
     public ItemAction[] Actions;
+    public List<string> Tags;
 
     /// <summary>
     /// Searches through Actions for typeof(T). Can be null

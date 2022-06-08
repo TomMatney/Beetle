@@ -49,10 +49,10 @@ public class ItemHotbarButton : MonoBehaviour
     public void SetItem(ItemInstance itemInstance, ItemData itemData)
     {
         abilityIcon.sprite = itemData.Icon;
-        if(itemInstance.Count > -1)
+        if(itemInstance.Amount > -1)
         {
             usesText.enabled = true;
-            usesText.text = itemInstance.Count.ToString();
+            usesText.text = itemInstance.Amount.ToString();
         }
         else
         {

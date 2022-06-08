@@ -5,14 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class ItemInstance //: INetworkSerializable
 {
-    public ItemInstance(int Id, int Count)
+    public ItemInstance(int Id, int Amount)
     {
         this.Id = Id;
-        this.Count = Count;
+        this.Amount = Amount;
     }
 
     public int Id;
-    public int Count;
+    public int Amount;
 
     //public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     //{

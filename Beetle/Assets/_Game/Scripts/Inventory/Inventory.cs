@@ -16,9 +16,9 @@ public class Inventory
         {
             if(item.Id == newItem.Id)
             {
-                if(item.Count + count <= newItem.StackSize)
+                if(item.Amount + count <= newItem.StackSize)
                 {
-                    item.Count += count;
+                    item.Amount += count;
                     added = true;
                     break;
                 }
