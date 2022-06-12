@@ -15,30 +15,31 @@ public class Tree : MonoBehaviour
     {
         Health health = GetComponent<Health>();
         health.damageTakenEvent.AddListener(DamageTree);
-        health.deathEvent.AddListener(DestroyTree);
+        health.deathEvent.AddListener(OnDeath);
     }
     public void DamageTree(DamageData damageData)
     {
         treeFeels?.PlayFeedbacks();
     }
 
-    protected virtual void GetRidOf()
+    //Called from animationEvent
+    protected void DestroyTree()
     {
         Destroy(gameObject);
-        Instantiate(itemPrefab, transform.position, itemPrefab.transform.rotation);
-        Debug.Log("Deleted");
+        foreach (var drop in dropTable.dropData)
+        {
+            float randomChance = Random.Range(0f, 100f);
+            if (randomChance <= drop.dropChance)
+            {
+                var itemObject = Instantiate(itemPrefab, transform.position, itemPrefab.transform.rotation);
+                int amount = drop.amount.Random();
+                itemObject.SetItemData(drop.itemData, amount);
+            }
+        }
     }
-    private void DestroyTree(DamageData damageData)
+    private void OnDeath(DamageData damageData)
     {
-        //var inventory = damageData.source?.GetComponent<PlayerData>()?.PlayerInventory;
-        //if (inventory != null)
-        //{
-        //    inventory.AddItem(dropTable);
-        //}
-
-        //Instantiate(itemPrefab, transform.position, itemPrefab.transform.rotation);
-        // Destroy(gameObject);
-
         treeFall?.PlayFeedbacks();
+        GetComponent<Collider>().enabled = false;
     }
 }

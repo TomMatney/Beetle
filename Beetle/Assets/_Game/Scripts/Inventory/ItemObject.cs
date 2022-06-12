@@ -4,24 +4,16 @@ using UnityEngine;
 
 public class ItemObject : MonoBehaviour
 {
-    [SerializeField] private ItemData itemData;
-    //[SerializeField] private MeshFilter meshFilter;
+    private int amount;
+    private ItemData itemData;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float scale = 1f;
 
-    private Vector3 startPosition;
-
-    void Start()
+    public void SetItemData(ItemData itemData, int amount)
     {
-        //var meshItem = Instantiate(itemData.Mesh, transform.position, transform.rotation, transform);
-        //meshItem.transform.localScale *= scale;
-        //TODO Make sprite
-        startPosition = transform.position;
-    }
-
-    void Update()
-    {
-        transform.Rotate(0f, 90f * Time.deltaTime, 0f, Space.World);
-        transform.position = startPosition + (Vector3.up * Mathf.Cos(Time.time) * 0.5f);
+        this.itemData = itemData;
+        this.amount = amount;
+        spriteRenderer.sprite = itemData.Icon;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,13 +21,7 @@ public class ItemObject : MonoBehaviour
         var inventory = other.GetComponent<PlayerInventory>();
         if (inventory != null)
         {
-           // var item = ItemManager.GetItemData(itemData.Id);
-            inventory.AddItem(itemData);
-            //if(item.IsEquippable())
-            //{
-            //    item.EquipItem(other.GetComponent<CharacterData>());
-            //}
-            //TODO particle effect
+            inventory.AddItem(itemData, amount);
             DestroyItem();
         }
     }
@@ -43,25 +29,5 @@ public class ItemObject : MonoBehaviour
     private void DestroyItem()
     {
         Destroy(gameObject);
-        //if(IsServer)
-        //{
-        //    DestroyItemClientRPC();
-        //}
-        //else
-        //{
-        //    DestroyItemServerRPC();
-        //}
     }
-
-    //[ServerRpc(RequireOwnership = false)]
-    //private void DestroyItemServerRPC()
-    //{
-    //    DestroyItemClientRPC();
-    //}
-
-    //[ClientRpc]
-    //private void DestroyItemClientRPC()
-    //{
-    //    Destroy(gameObject);
-    //}
 }

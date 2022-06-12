@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 9033257843127960925}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9033257842748663918
 GameObject:
@@ -42,7 +42,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9033257842748663916}
   - component: {fileID: 9033257842748663919}
-  - component: {fileID: 9033257842748663917}
   m_Layer: 0
   m_Name: FeelsFall
   m_TagString: Untagged
@@ -222,22 +221,6 @@ MonoBehaviour:
         MinPitch: 1
         MaxPitch: 1
         SfxAudioMixerGroup: {fileID: 0}
---- !u!114 &9033257842748663917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9033257842748663918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 614edb33c38bcf949846d5675f29f9fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AutomaticallyUnparentOnAwake: 1
-  settingsSo: {fileID: 11400000, guid: 07ea3ff88e1ecb84d91f58aa804badc6, type: 2}
-  AudioSourcePoolSize: 10
-  PoolCanExpand: 1
 --- !u!1001 &6009719362753944489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,15 +239,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3331075816872943348, guid: 4030ba6258856d24c8833c79e25600e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.110626
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3331075816872943348, guid: 4030ba6258856d24c8833c79e25600e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08257723
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3331075816872943348, guid: 4030ba6258856d24c8833c79e25600e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.1330566
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3331075816872943348, guid: 4030ba6258856d24c8833c79e25600e7, type: 3}
       propertyPath: m_LocalRotation.w

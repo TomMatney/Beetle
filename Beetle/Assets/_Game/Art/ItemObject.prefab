@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3613710304019849117}
   - component: {fileID: 8549130113339446418}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: ItemObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d91c30d4bf1ee46a93f04a35139bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: cfe1a9021fa26094c963ba5865325fb4, type: 2}
+  spriteRenderer: {fileID: 8549130113339446418}
   scale: 1
 --- !u!212 &8549130113339446418
 SpriteRenderer:
