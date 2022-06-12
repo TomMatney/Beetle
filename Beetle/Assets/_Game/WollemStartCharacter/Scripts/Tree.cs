@@ -6,6 +6,7 @@ using UnityEngine;
 public class Tree : MonoBehaviour
 {
     public MMFeedbacks treeFeels;
+    public ItemObject itemPrefab;
 
     public ItemDropTable dropTable = new ItemDropTable();
 
@@ -22,11 +23,12 @@ public class Tree : MonoBehaviour
 
     private void DestroyTree(DamageData damageData)
     {
-        var inventory = damageData.source?.GetComponent<PlayerData>()?.PlayerInventory;
-        if (inventory != null)
-        {
-            inventory.AddItem(dropTable);
-        }
+        //var inventory = damageData.source?.GetComponent<PlayerData>()?.PlayerInventory;
+        //if (inventory != null)
+        //{
+        //    inventory.AddItem(dropTable);
+        //}
+        Instantiate(itemPrefab, transform.position, itemPrefab.transform.rotation);
         Destroy(gameObject);
     }
 }

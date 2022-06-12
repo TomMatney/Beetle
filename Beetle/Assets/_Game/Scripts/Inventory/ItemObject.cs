@@ -29,8 +29,8 @@ public class ItemObject : MonoBehaviour
         var inventory = other.GetComponent<PlayerInventory>();
         if (inventory != null)
         {
-            var item = ItemManager.GetItemData(itemData.Id);
-            inventory.AddItem(item);
+           // var item = ItemManager.GetItemData(itemData.Id);
+            inventory.AddItem(itemData);
             //if(item.IsEquippable())
             //{
             //    item.EquipItem(other.GetComponent<CharacterData>());
