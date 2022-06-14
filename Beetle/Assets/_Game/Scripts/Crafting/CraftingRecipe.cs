@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class CraftingRecipe
+public class CraftingRecipe : ScriptableObject
 {
     [System.Serializable]
     public class ItemCraftData : CraftData

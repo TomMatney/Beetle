@@ -616,6 +616,7 @@ GameObject:
   - component: {fileID: 7194788181980478337}
   - component: {fileID: 7194788181980478336}
   - component: {fileID: 7194788181980478339}
+  - component: {fileID: 1475788486}
   m_Layer: 6
   m_Name: PlayerHold
   m_TagString: Untagged
@@ -639,7 +640,7 @@ Transform:
   - {fileID: 7194788181604240038}
   - {fileID: 7194788182131316799}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7194788181980478341
 MonoBehaviour:
@@ -734,6 +735,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory:
     items: []
+--- !u!65 &1475788486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7194788181980478363}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7194788182008107672
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,12 +912,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpdateMode: 0
-  PositionActive: 0
+  PositionActive: 1
   RotationActive: 0
   ScaleActive: 0
   PositionWiggleProperties:
     WigglePermitted: 1
-    WiggleType: 1
+    WiggleType: 3
     UseUnscaledTime: 0
     StartWigglingAutomatically: 1
     SmoothPingPong: 1
@@ -933,9 +947,9 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     FrequencyMin: 0
-    FrequencyMax: 1
+    FrequencyMax: 0
     AmplitudeMin: {x: 0, y: 0, z: 0}
-    AmplitudeMax: {x: 1, y: 1, z: 1}
+    AmplitudeMax: {x: 0, y: 0, z: 0}
     RelativeAmplitude: 1
     UniformValues: 0
     Curve:

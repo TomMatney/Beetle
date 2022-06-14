@@ -16,12 +16,6 @@ public class ScriptableObjectFactory : OdinMenuEditorWindow
         public string assetCreatePath;
     }
 
-    //private FactoryModeSettings abilityFactoryMode = new FactoryModeSettings()
-    //{
-    //    baseType = typeof(AbilityData),
-    //    assetCreatePath = "/_Game/Data/Abilities/"
-    //};
-
     private FactoryModeSettings itemFactoryMode = new FactoryModeSettings()
     {
         baseType = typeof(ItemData),
@@ -34,11 +28,11 @@ public class ScriptableObjectFactory : OdinMenuEditorWindow
         assetCreatePath = "/_Game/Data/Items/ItemActions/"
     };
 
-    //private FactoryModeSettings levelDataFactoryMode = new FactoryModeSettings()
-    //{
-    //    baseType = typeof(LevelData),
-    //    assetCreatePath = "/_Game/Data/Level/LevelData/"
-    //};
+    private FactoryModeSettings craftingRecipeFactoryMode = new FactoryModeSettings()
+    {
+        baseType = typeof(CraftingRecipe),
+        assetCreatePath = "/_Game/Data/Items/CraftingRecipes/"
+    };
 
     [MenuItem("Cogs/Scriptable Object Factory")]
     static void Init()
@@ -53,15 +47,14 @@ public class ScriptableObjectFactory : OdinMenuEditorWindow
         tree.Selection.SupportsMultiSelect = false;
 
         tree.Add("Items", new FactoryEditor(this, itemFactoryMode));
-        //tree.Add("Abilities", new FactoryEditor(this, abilityFactoryMode));
         tree.Add("ItemActions", new FactoryEditor(this, itemActionFactoryMode));  
-        //tree.Add("LevelData", new FactoryEditor(this, levelDataFactoryMode));  
+        tree.Add("CraftingRecipes", new FactoryEditor(this, craftingRecipeFactoryMode));  
         return tree;
     }
 
     protected class FactoryEditor
     {
-        private ScriptableObjectFactory scriptableObjectFactory;
+        //private ScriptableObjectFactory scriptableObjectFactory;
         private FactoryModeSettings factoryModeSettings;
 
         [SerializeField] public string scriptableObjectName;
@@ -76,7 +69,7 @@ public class ScriptableObjectFactory : OdinMenuEditorWindow
 
         public FactoryEditor(ScriptableObjectFactory scriptableObjectFactory, FactoryModeSettings factoryModeSettings)
         {
-            this.scriptableObjectFactory = scriptableObjectFactory;
+            //this.scriptableObjectFactory = scriptableObjectFactory;
             this.factoryModeSettings = factoryModeSettings;
             GetSubTypes();
         }

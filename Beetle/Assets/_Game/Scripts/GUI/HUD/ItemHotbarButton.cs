@@ -6,7 +6,7 @@ public class ItemHotbarButton : MonoBehaviour
 {
     public UnityEngine.UI.Button Button;
 
-    [SerializeField] private UnityEngine.UI.Image abilityIcon;
+    [SerializeField] private UnityEngine.UI.Image itemIcon;
     [SerializeField] private TMPro.TextMeshProUGUI hotkeyText;
     [SerializeField] private UnityEngine.UI.Image cooldownImage;
     [SerializeField] private TMPro.TextMeshProUGUI cooldownText;
@@ -15,7 +15,13 @@ public class ItemHotbarButton : MonoBehaviour
 
     private void Start()
     {
-        SetCooldown(0f, 0f);
+        //SetCooldown(0f, 0f);
+    }
+
+    public void Initialize(string hotkey)
+    {
+        hotkeyText.text = hotkey;
+        SetAmount(0);
     }
 
     public void SetCooldown(float percent, float time)
@@ -35,28 +41,22 @@ public class ItemHotbarButton : MonoBehaviour
         }
     }
 
-    public void SetUses(int uses)
+    public void SetAmount(int amount)
     {
-        usesText.enabled = true;
-        usesText.text = uses.ToString();
-    }
-
-    public void Initialize(string hotkey)
-    {
-        hotkeyText.text = hotkey;
-    }
-
-    public void SetItem(ItemInstance itemInstance, ItemData itemData)
-    {
-        abilityIcon.sprite = itemData.Icon;
-        if(itemInstance.Amount > -1)
+        if (amount > 0)
         {
             usesText.enabled = true;
-            usesText.text = itemInstance.Amount.ToString();
+            usesText.text = amount.ToString();
         }
         else
         {
             usesText.enabled = false;
         }
+    }
+
+    public void SetItem(ItemInstance itemInstance, ItemData itemData)
+    {
+        itemIcon.sprite = itemData.Icon;
+        SetAmount(itemInstance.Amount);
     }
 }

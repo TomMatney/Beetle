@@ -9,6 +9,8 @@ public class Inventory
 
     public List<ItemInstance> Items => items;
 
+    public System.Action OnInventoryChanged;
+
     public void AddItem(ItemData newItem, int count = 1)
     {
         bool added = false;
@@ -29,6 +31,7 @@ public class Inventory
             ItemInstance itemInstance = new ItemInstance(newItem.Id, count);
             items.Add(itemInstance);
         }
+        OnInventoryChanged.Invoke();
     }
 
     public bool HasItem(ItemInstance item)
@@ -44,6 +47,6 @@ public class Inventory
 
     public void RemoveItem(ItemInstance item)
     {
-
+        OnInventoryChanged.Invoke();
     }
 }
