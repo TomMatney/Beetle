@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MoreMountains.Feedbacks;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerMove : MonoBehaviour
     public Animator animator;
 
     public bool walk = false;
+
+    public MMFeedbacks SoundWalk;
 
 
     void Start()
@@ -32,6 +35,10 @@ public class PlayerMove : MonoBehaviour
         moveDir = new Vector3(moveX, 0f, moveZ).normalized;        
     }
 
+    public virtual void WalkingSound()
+    {
+        SoundWalk?.PlayFeedbacks();
+    }
     void WalkAnim()
     { 
         if (moveDir != Vector3.zero)
@@ -39,6 +46,7 @@ public class PlayerMove : MonoBehaviour
             //walk = true;
             animator.SetBool("Walk", true);
             Debug.Log("true");
+            WalkingSound();
         }
         else
         {
