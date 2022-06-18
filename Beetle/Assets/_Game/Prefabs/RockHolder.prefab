@@ -494,7 +494,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7836c4035ed326f43ab83191d6f70483, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.536
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1327,8 +1327,8 @@ MonoBehaviour:
         - {fileID: 8300000, guid: 06c04e2d65e82c44594cdd96a3d6146b, type: 3}
         - {fileID: 8300000, guid: 205b0965a90d1aa45a8f833f205a0afe, type: 3}
         - {fileID: 8300000, guid: 14a31d8383cd07c4d9981314a1759149, type: 3}
-        MinVolume: 1
-        MaxVolume: 1
+        MinVolume: 0.3
+        MaxVolume: 0.4
         MinPitch: 1
         MaxPitch: 1
         SfxAudioMixerGroup: {fileID: 0}
@@ -6343,7 +6343,7 @@ Transform:
   m_Children:
   - {fileID: 665411992961035987}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2169881209633439805
 PrefabInstance:

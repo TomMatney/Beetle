@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab85e593f4e922743be708eead861dae, type: 3}
-  m_Name: CraftingRecipe
+  m_Script: {fileID: 11500000, guid: a618dc06702ae874e996ffc5d3f9e227, type: 3}
+  m_Name: WoodHatchetUseToolItemAction
   m_EditorClassIdentifier: 
-  itemInput:
-  - Amount: 1
-    ItemId: 0
-  tagInput: []
-  output:
-    Amount: 1
-    ItemId: 1
+  resourceNodeType: 0
+  resourceTier: 0

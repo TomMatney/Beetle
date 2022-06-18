@@ -8,6 +8,7 @@ public class PlayerData : MonoBehaviour
     //public PlayerPickup PlayerPickup { get; private set; }
     public CharacterHealth CharacterHealth;
     public PlayerInventory PlayerInventory;
+    public WeaponAnimator WeaponAnimator;
 
     public static PlayerData Instance;
 

@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-class WeaponAnimator : MonoBehaviour
+public class WeaponAnimator : MonoBehaviour
 {
     [System.Serializable]
     private class AttackTransformData
@@ -32,7 +32,8 @@ class WeaponAnimator : MonoBehaviour
 
     //private float lastAttackTime = 0f;
 
-    [SerializeField] AttackTransformData attackData = default;
+    [SerializeField] private AttackTransformData attackData = default;
+    [SerializeField] private PlayerHandController playerHandController;
 
     private Vector3 AttackStartPos => attackData.startPosition + defaultPosition;
     private Vector3 AttackEndPos => attackData.endPosition + defaultPosition;
@@ -53,13 +54,7 @@ class WeaponAnimator : MonoBehaviour
         if (attacking)
             return;
 
-        HandleArms();
-
-        if(Input.GetButton("Fire1"))
-        {
-            attacking = true;
-            Attack();
-        }
+        HandleArms();  
     }
 
     private void HandleArms()
@@ -77,8 +72,13 @@ class WeaponAnimator : MonoBehaviour
         weaponTransform.localEulerAngles = transform.TransformDirection(defaultRotation);
     }
 
-    private void Attack()
+    public void Attack()
     {
+        if(attacking)
+        {
+            return;
+        }
+        attacking = true;
         //bool reverse = !lastWasReversed && (Time.time < lastAttackTime + comboTime) && lastAttackDirection == AttackDirection.Up;
         //lastWasReversed = reverse;
         StartCoroutine(DoAttack());
@@ -86,7 +86,9 @@ class WeaponAnimator : MonoBehaviour
 
     private IEnumerator DoAttack()
     {
-        if(slashAttackSound != null)
+        playerHandController.SetHandsOnWeapon();
+
+        if (slashAttackSound != null)
         {
             AudioSource.PlayClipAtPoint(slashAttackSound, transform.position);
         }
@@ -115,6 +117,7 @@ class WeaponAnimator : MonoBehaviour
         yield return new WaitForSeconds(attackCooldownTime);
         //lastAttackTime = Time.time;
         attacking = false;
+        playerHandController.SetHandsOnOriginal();
     }
 
     private void SetWeaponTransformAtTime(float t)

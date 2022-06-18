@@ -17,7 +17,7 @@ public abstract class ItemData : ScriptableObject
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
-    public T FindItemActionOfType<T>() where T: ItemAction
+    public T GetItemActionOfType<T>() where T: ItemAction
     {
         foreach (var action in Actions)
         {
@@ -31,7 +31,7 @@ public abstract class ItemData : ScriptableObject
 
     public bool HasItemActionOfType<T>() where T: ItemAction
     {
-        return FindItemActionOfType<T>() != null;
+        return GetItemActionOfType<T>() != null;
     }
 
     public bool IsEquippable()
@@ -41,7 +41,7 @@ public abstract class ItemData : ScriptableObject
 
     public void EquipItem(PlayerData playerData)
     {
-        var equipAction = FindItemActionOfType<EquippableItemAction>();
+        var equipAction = GetItemActionOfType<EquippableItemAction>();
         if(equipAction)
         {
             equipAction.OnEquip(playerData);
@@ -50,7 +50,7 @@ public abstract class ItemData : ScriptableObject
 
     public void UnequipItem(PlayerData characterData)
     {
-        var equipAction = FindItemActionOfType<EquippableItemAction>();
+        var equipAction = GetItemActionOfType<EquippableItemAction>();
         if (equipAction)
         {
             equipAction.OnUnequip(characterData);

@@ -33,6 +33,31 @@ public class ItemHotbar : MonoBehaviour
             ItemHotbarButton button = itemSlotsIcons[i];
             button.Initialize(hotkeyStrings[i] /*, Sprite defaultIcon*/);
         }
+
+        OnItemsChanged();
+    }
+
+    private void Update()
+    {
+        for(int i = 0; i < hotkeys.Length; i++)
+        {
+            if(Input.GetKeyDown(hotkeys[i]))
+            {
+                if(inventory.Inventory.Items.Count > i)
+                {
+                    var item = inventory.Inventory.Items[i];
+                    var itemData = ItemManager.GetItemData(item.Id);
+                    if (itemData != null)
+                    {
+                        var useToolAction = itemData.GetItemActionOfType<UseToolItemAction>();
+                        if(useToolAction != null)
+                        {
+                            useToolAction.OnUse(inventory.PlayerData);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public void OnItemsChanged()

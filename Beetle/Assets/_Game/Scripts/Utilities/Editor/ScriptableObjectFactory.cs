@@ -19,7 +19,7 @@ public class ScriptableObjectFactory : OdinMenuEditorWindow
     private FactoryModeSettings itemFactoryMode = new FactoryModeSettings()
     {
         baseType = typeof(ItemData),
-        assetCreatePath = "/_Game/Data/Items/"
+        assetCreatePath = "/_Game/Data/Items/Items/"
     };
 
     private FactoryModeSettings itemActionFactoryMode = new FactoryModeSettings()

@@ -23,7 +23,13 @@ public class CraftingMenuButton : MonoBehaviour
             CraftingRecipe.ItemCraftData inputItem = craftingRecipe.itemInput[i];
             var itemData = ItemManager.GetItemData(inputItem.ItemId);
             InputIcons[i].sprite = itemData.Icon;
+            InputAmounts[i].transform.parent.gameObject.SetActive(true);
             InputAmounts[i].text = inputItem.Amount.ToString();
+        }
+
+        for(int i = craftingRecipe.itemInput.Count; i < 3; i++)
+        {
+            InputAmounts[i].transform.parent.gameObject.SetActive(false);
         }
     }
 }

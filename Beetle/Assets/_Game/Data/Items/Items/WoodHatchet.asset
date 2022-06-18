@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab85e593f4e922743be708eead861dae, type: 3}
-  m_Name: CraftingRecipe
+  m_Script: {fileID: 11500000, guid: 95000d5da52272f4189ac1533dd2ebc9, type: 3}
+  m_Name: WoodHatchet
   m_EditorClassIdentifier: 
-  itemInput:
-  - Amount: 1
-    ItemId: 0
-  tagInput: []
-  output:
-    Amount: 1
-    ItemId: 1
+  Name: 
+  Description: 
+  StackSize: 1
+  Id: 3
+  Icon: {fileID: 0}
+  Actions:
+  - {fileID: 11400000, guid: 0c00d03617e170f44a4ed398ab25cf03, type: 2}
+  Tags: []

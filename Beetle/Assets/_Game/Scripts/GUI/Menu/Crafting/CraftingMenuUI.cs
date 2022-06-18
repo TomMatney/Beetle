@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class CraftingMenuUI : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private CraftingMenuButton craftingButtonPrefab;
+
+    [SerializeField] private CraftingRecipe[] recipes;
+
+    [SerializeField] private RectTransform holder;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for(int i = 0; i < recipes.Length; i++)
+        {
+            var button = Instantiate(craftingButtonPrefab, holder);
+            button.Initialize(recipes[i]);
+        }
     }
 }

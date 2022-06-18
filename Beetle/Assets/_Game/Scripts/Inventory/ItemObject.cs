@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ItemObject : MonoBehaviour
 {
-    private int amount;
-    private ItemData itemData;
+    [SerializeField] private int amount;
+    [SerializeField] private ItemData itemData;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float scale = 1f;
 

@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public Inventory Inventory;
-
-    private void Awake()
-    {
-        Inventory = new Inventory();
-    }
+    public Inventory Inventory = new Inventory();
+    public PlayerData PlayerData;
 
     public void AddItem(ItemData itemData, int count = 1)
     {
