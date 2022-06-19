@@ -1768,6 +1768,8 @@ MonoBehaviour:
     items:
     - Id: 2
       Amount: 1
+    - Id: 3
+      Amount: 1
   PlayerData: {fileID: 7194788181980478338}
 --- !u!65 &1475788486
 BoxCollider:
@@ -2776,6 +2778,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4382847831040434932, guid: 98cea97f32777cc439de885bab5ea707, type: 3}
+      propertyPath: swordDamageDealer
+      value: 
+      objectReference: {fileID: 7194788182336695284}
+    - target: {fileID: 4382847831040434932, guid: 98cea97f32777cc439de885bab5ea707, type: 3}
       propertyPath: playerHandController
       value: 
       objectReference: {fileID: 1728799380}
@@ -2888,3 +2894,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4382847831902897119, guid: 98cea97f32777cc439de885bab5ea707, type: 3}
   m_PrefabInstance: {fileID: 6848292070955853908}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7194788182336695284 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4382847831902897056, guid: 98cea97f32777cc439de885bab5ea707, type: 3}
+  m_PrefabInstance: {fileID: 6848292070955853908}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8971938084536554bab8f1c9a361208b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

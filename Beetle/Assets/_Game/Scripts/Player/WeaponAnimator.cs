@@ -13,7 +13,7 @@ public class WeaponAnimator : MonoBehaviour
         [SerializeField] public Vector3 endDirection = new Vector3(.7f, 0f, .7f);
     }
 
-    //[SerializeField] private DamageDealer swordDamageDealer = default;
+    [SerializeField] private DamageDealer swordDamageDealer = default;
 
     [SerializeField] private AudioClip slashAttackSound = default;
 
@@ -72,7 +72,7 @@ public class WeaponAnimator : MonoBehaviour
         weaponTransform.localEulerAngles = transform.TransformDirection(defaultRotation);
     }
 
-    public void Attack()
+    public void Attack(System.Action<PlayerData, Health> OnHit)
     {
         if(attacking)
         {
@@ -81,12 +81,15 @@ public class WeaponAnimator : MonoBehaviour
         attacking = true;
         //bool reverse = !lastWasReversed && (Time.time < lastAttackTime + comboTime) && lastAttackDirection == AttackDirection.Up;
         //lastWasReversed = reverse;
-        StartCoroutine(DoAttack());
+        StartCoroutine(DoAttack(OnHit));
     }
 
-    private IEnumerator DoAttack()
+    private IEnumerator DoAttack(System.Action<PlayerData, Health> OnHit)
     {
         playerHandController.SetHandsOnWeapon();
+        swordDamageDealer.OnHit += (Health health) => { 
+            OnHit.Invoke(playerHandController.GetComponentInParent<PlayerData>(), health); 
+        };
 
         if (slashAttackSound != null)
         {
@@ -118,6 +121,7 @@ public class WeaponAnimator : MonoBehaviour
         //lastAttackTime = Time.time;
         attacking = false;
         playerHandController.SetHandsOnOriginal();
+        swordDamageDealer.OnHit = null;
     }
 
     private void SetWeaponTransformAtTime(float t)

@@ -10,8 +10,15 @@ public class CraftingMenuButton : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image[] InputIcons;
     [SerializeField] private TMPro.TextMeshProUGUI[] InputAmounts;
 
-    public void Initialize(CraftingRecipe craftingRecipe)
+    private CraftingRecipe craftingRecipe;
+    private CraftingMenuUI craftingMenuUI;
+
+    public void Initialize(CraftingRecipe craftingRecipe, CraftingMenuUI craftingMenuUI)
     {
+        this.craftingRecipe = craftingRecipe;
+        this.craftingMenuUI = craftingMenuUI;
+        GetComponent<UnityEngine.UI.Button>().onClick.AddListener(TryCraftItem);
+
         var outputItem = ItemManager.GetItemData(craftingRecipe.output.ItemId);
         OutputIcon.sprite = outputItem.Icon;
         OutputAmount.text = craftingRecipe.output.Amount.ToString();
@@ -31,5 +38,10 @@ public class CraftingMenuButton : MonoBehaviour
         {
             InputAmounts[i].transform.parent.gameObject.SetActive(false);
         }
+    }
+
+    public void TryCraftItem()
+    {
+        craftingMenuUI.TryCraftItem(craftingRecipe);
     }
 }

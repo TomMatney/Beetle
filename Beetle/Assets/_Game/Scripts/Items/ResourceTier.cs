@@ -5,7 +5,6 @@ using UnityEngine;
 public enum ResourceTier
 {
     Wood,
-    Copper,
     Iron,
     Gold,
 }

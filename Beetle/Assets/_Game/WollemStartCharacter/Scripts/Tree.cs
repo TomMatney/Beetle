@@ -11,6 +11,9 @@ public class Tree : MonoBehaviour
 
     public ItemDropTable dropTable = new ItemDropTable();
 
+    public ResourceNodeType resourceNodeType;
+    public ResourceTier resourceTier;
+
     private void Start()
     {
         Health health = GetComponent<Health>();
@@ -37,6 +40,7 @@ public class Tree : MonoBehaviour
             }
         }
     }
+
     private void OnDeath(DamageData damageData)
     {
         treeFall?.PlayFeedbacks();

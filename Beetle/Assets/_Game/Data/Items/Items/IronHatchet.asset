@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95000d5da52272f4189ac1533dd2ebc9, type: 3}
-  m_Name: WoodHatchet
+  m_Name: IronHatchet
   m_EditorClassIdentifier: 
   Name: 
   Description: 
   StackSize: 1
-  Id: 3
-  Icon: {fileID: 21300000, guid: feeecb7cfd765c94fa13c63b08d2e2aa, type: 3}
+  Id: 4
+  Icon: {fileID: 21300000, guid: bfb3016d5049b6745be98200551b3e32, type: 3}
   Actions:
-  - {fileID: 11400000, guid: 0c00d03617e170f44a4ed398ab25cf03, type: 2}
+  - {fileID: 11400000, guid: a60d7db7f18cfc24da588badb83f75c7, type: 2}
   Tags: []

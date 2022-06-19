@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class ItemHotbarButton : MonoBehaviour
     public void Initialize(string hotkey)
     {
         hotkeyText.text = hotkey;
+        itemIcon.enabled = false;
         SetAmount(0);
     }
 
@@ -56,7 +58,14 @@ public class ItemHotbarButton : MonoBehaviour
 
     public void SetItem(ItemInstance itemInstance, ItemData itemData)
     {
+        itemIcon.enabled = true;
         itemIcon.sprite = itemData.Icon;
         SetAmount(itemInstance.Amount);
+    }
+
+    public void Clear()
+    {
+        SetAmount(0);
+        itemIcon.enabled = false;
     }
 }

@@ -11,16 +11,22 @@ public class Inventory
 
     public System.Action OnInventoryChanged;
 
-    public void AddItem(ItemData newItem, int count = 1)
+    public void AddItem(int itemId, int amount = 1)
+    {
+        var itemData = ItemManager.GetItemData(itemId);
+        AddItem(itemData, amount);
+    }
+
+    public void AddItem(ItemData newItem, int amount = 1)
     {
         bool added = false;
         foreach(var item in items)
         {
             if(item.Id == newItem.Id)
             {
-                if(item.Amount + count <= newItem.StackSize)
+                if(item.Amount + amount <= newItem.StackSize)
                 {
-                    item.Amount += count;
+                    item.Amount += amount;
                     added = true;
                     break;
                 }
@@ -28,25 +34,34 @@ public class Inventory
         }
         if(!added)
         {
-            ItemInstance itemInstance = new ItemInstance(newItem.Id, count);
+            ItemInstance itemInstance = new ItemInstance(newItem.Id, amount);
             items.Add(itemInstance);
         }
         OnInventoryChanged.Invoke();
     }
 
-    public bool HasItem(ItemInstance item)
+    public bool HasItem(int itemId, int amount = 1)
     {
-        bool hasItem = false;
-        foreach(ItemInstance it in items)
-        {
-            if (it.Id == item.Id)
-                return true;
-        }
-        return hasItem;
+        return FindItem(itemId, amount) != null;
     }
 
-    public void RemoveItem(ItemInstance item)
+    /// <summary>
+    /// Use FindItem to find ItemInstance and then remove using this. 
+    /// </summary>
+    /// <param name="itemInstance"></param>
+    public void RemoveItem(ItemInstance itemInstance)
     {
+        items.Remove(itemInstance);
         OnInventoryChanged.Invoke();
+    }
+
+    public ItemInstance FindItem(int itemId, int amount = 1)
+    {
+        foreach (ItemInstance it in items)
+        {
+            if (it.Id == itemId && it.Amount >= amount)
+                return it;
+        }
+        return null;
     }
 }

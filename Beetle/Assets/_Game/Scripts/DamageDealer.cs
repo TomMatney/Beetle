@@ -10,6 +10,8 @@ public class DamageDealer : MonoBehaviour
     public LayerMask layerMask;
     public float damageAmount = 10f;
 
+    public System.Action<Health> OnHit;
+
     private void OnTriggerEnter(Collider collision)
     {
         if (layerMask.IsInLayerMask(collision.gameObject.layer) == false)
@@ -20,8 +22,15 @@ public class DamageDealer : MonoBehaviour
         Health health = collision.GetComponent<Health>();
         if (health != null)
         {
-            health.Damage(transform.root.gameObject, damageAmount, transform.position, transform.forward);
-            pFeel.Change();
+            if(OnHit != null)
+            {
+                OnHit.Invoke(health);
+            }
+            else
+            {
+                health.Damage(transform.root.gameObject, damageAmount, transform.position, transform.forward);
+                pFeel.Change();
+            }
         }
     }
 }
