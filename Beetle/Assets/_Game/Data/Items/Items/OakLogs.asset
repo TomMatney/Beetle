@@ -16,5 +16,6 @@ MonoBehaviour:
   Description: 
   StackSize: 99
   Id: 0
-  Icon: {fileID: 21300000, guid: e147e5783853fba4eb1514d70a136c5a, type: 3}
+  Icon: {fileID: 21300000, guid: 3db6c5a11e6b1a6449454b3eb92765cb, type: 3}
   Actions: []
+  Tags: []
