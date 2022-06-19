@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 665411992482686650}
   - component: {fileID: 1709855870}
   m_Layer: 0
-  m_Name: tree
+  m_Name: ArtVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1843746910066862038}
+  m_Children: []
   m_Father: {fileID: 665411992961035987}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -41,7 +40,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665411992482686648}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -75,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6987e9aec17b7174e958baa8f7ee9714, type: 3}
-  m_Color: {r: 0.8207547, g: 0.49942148, b: 0.49942148, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5723c979e6f469d45896a5a2e4de7b75, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -422,7 +421,7 @@ GameObject:
   - component: {fileID: 665411992961035996}
   - component: {fileID: 665411992961035997}
   m_Layer: 0
-  m_Name: Rock
+  m_Name: Code
   m_TagString: Gatherable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -912,7 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248021b3e83e2424d8aed6c42ebaddf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100000
+  maxHealth: 100
   damageCooldown: 0.2
   invulnerable: 0
   allRenderers: []
@@ -1113,7 +1112,7 @@ MonoBehaviour:
           TargetBPM: 120
         Owner: {fileID: 665411993067766753}
         DebugActive: 0
-        Sfx: {fileID: 8300000, guid: 4328a47de41b3ef4ca87043cc24b9f30, type: 3}
+        Sfx: {fileID: 8300000, guid: 8d9156ec942151b4eb5aabf155d3bc85, type: 3}
         RandomSfx: []
         TestPlayButton:
           ButtonText: Debug Play Sound
@@ -1446,7 +1445,7 @@ MonoBehaviour:
     - rid: 7413793917421486080
       type: {class: MMF_Wiggle, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 1346305780
         Label: Wiggle
         Channel: 0
@@ -6264,7 +6263,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ae4abd7fc8974e95966d421d6cd74ff, type: 2}
+  - {fileID: 2100000, guid: ab8f6b52749271040b50820e180bb42c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6345,69 +6344,5 @@ Transform:
   m_Children:
   - {fileID: 665411992961035987}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2169881209633439805
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 665411992482686649}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.36
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-      propertyPath: m_Name
-      value: rock1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
---- !u!4 &1843746910066862038 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9eb0a96d0c471cd44ac14f1bbe89aa43, type: 3}
-  m_PrefabInstance: {fileID: 2169881209633439805}
-  m_PrefabAsset: {fileID: 0}
