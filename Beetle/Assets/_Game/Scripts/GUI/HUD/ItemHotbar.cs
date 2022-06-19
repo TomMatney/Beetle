@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,9 +15,14 @@ public class ItemHotbar : MonoBehaviour
     private string[] hotkeyStrings = new string[] {
         "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
+    private int selectedIndex = 0;
+
+    [SerializeField] private RectTransform selectIcon;
+
     private void Start()
     {
         Initialize(FindObjectOfType<PlayerInventory>());
+        SetHotbarSelection(0);
     }
 
     public void Initialize(PlayerInventory inventory)
@@ -39,22 +43,59 @@ public class ItemHotbar : MonoBehaviour
 
     private void Update()
     {
-        for(int i = 0; i < hotkeys.Length; i++)
+        float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
+        if (scrollWheel > 0f)
+        {
+            SetHotbarSelection(++selectedIndex);
+        }
+        else if(scrollWheel < 0f)
+        {
+            SetHotbarSelection(--selectedIndex);
+        }
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            UseItemAtIndex(selectedIndex);
+        }
+
+        for (int i = 0; i < hotkeys.Length; i++)
         {
             if(Input.GetKeyDown(hotkeys[i]))
             {
                 if(inventory.Inventory.Items.Count > i)
                 {
-                    var item = inventory.Inventory.Items[i];
-                    var itemData = ItemManager.GetItemData(item.Id);
-                    if (itemData != null)
-                    {
-                        var useToolAction = itemData.GetItemActionOfType<UseToolItemAction>();
-                        if(useToolAction != null)
-                        {
-                            useToolAction.OnUse(inventory.PlayerData);
-                        }
-                    }
+                    UseItemAtIndex(i);
+                }
+            }
+        }
+    }
+
+    private void SetHotbarSelection(int newSelection)
+    {
+        if(newSelection < 0)
+        {
+            newSelection = itemSlotsIcons.Length - 1;
+        }
+        if(newSelection >= itemSlotsIcons.Length)
+        {
+            newSelection = 0;
+        }
+        selectedIndex = newSelection;
+        selectIcon.position = itemSlotsIcons[newSelection].GetComponent<RectTransform>().position;
+    }
+
+    private void UseItemAtIndex(int index)
+    {
+        if (inventory.Inventory.Items.Count > index)
+        {
+            var item = inventory.Inventory.Items[index];
+            var itemData = ItemManager.GetItemData(item.Id);
+            if (itemData != null)
+            {
+                var useToolAction = itemData.GetItemActionOfType<UseToolItemAction>();
+                if (useToolAction != null)
+                {
+                    useToolAction.OnUse(inventory.PlayerData);
                 }
             }
         }
@@ -66,8 +107,8 @@ public class ItemHotbar : MonoBehaviour
         for (int i = 0; i < itemSlotsIcons.Length; i++)
         {
             if(i >= items.Count)
-            {
-                itemSlotsIcons[i].SetAmount(0);
+            {        
+                itemSlotsIcons[i].Clear();
                 continue;
             }
 

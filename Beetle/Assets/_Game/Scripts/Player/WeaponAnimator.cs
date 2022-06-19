@@ -115,9 +115,9 @@ public class WeaponAnimator : MonoBehaviour
         swordTrail.transform.parent = null;
         Destroy(swordTrail.gameObject, 0.05f);
 
-        weaponTransform.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(attackCooldownTime);
+        weaponTransform.gameObject.SetActive(false);
         //lastAttackTime = Time.time;
         attacking = false;
         playerHandController.SetHandsOnOriginal();

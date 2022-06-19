@@ -45,14 +45,12 @@ public class PlayerMove : MonoBehaviour
         {
             //walk = true;
             animator.SetBool("Walk", true);
-            Debug.Log("true");
             //WalkingSound();
         }
         else
         {
             animator.SetBool("Walk", false);
             //walk = false;
-            Debug.Log("false");
         }
     }
     
