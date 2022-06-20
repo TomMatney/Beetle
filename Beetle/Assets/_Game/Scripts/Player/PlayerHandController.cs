@@ -30,11 +30,11 @@ public class PlayerHandController : MonoBehaviour
     {
         rightHand.parent = weaponParent;
         leftHand.parent = weaponParent;
+        animator.Rebind();
         leftHand.localPosition = new Vector3(-.22f, .08f, -.34f);
         leftHand.localEulerAngles = new Vector3(-90f, 0f, 0f);
         rightHand.localPosition = new Vector3(-.23f, .08f, .65f);
         rightHand.localEulerAngles = new Vector3(-90f, 0f, 0f);
-        animator.Rebind();
     }
 
     public void SetHandsOnOriginal()
