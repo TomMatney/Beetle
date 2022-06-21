@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemInput:
   - Amount: 1
-    ItemId: 0
+    ItemData: {fileID: 11400000, guid: cfe1a9021fa26094c963ba5865325fb4, type: 2}
   - Amount: 1
-    ItemId: 1
+    ItemData: {fileID: 11400000, guid: 10ee8f33baa9f434c8db3b9bd9f02b1c, type: 2}
   tagInput: []
   output:
     Amount: 1
-    ItemId: 4
+    ItemData: {fileID: 11400000, guid: 01abb540f9c192e4fb946bd7bc9907f9, type: 2}

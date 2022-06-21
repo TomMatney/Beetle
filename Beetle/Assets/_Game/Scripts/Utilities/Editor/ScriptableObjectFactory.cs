@@ -34,7 +34,7 @@ public class ScriptableObjectFactory : OdinMenuEditorWindow
         assetCreatePath = "/_Game/Data/Items/CraftingRecipes/"
     };
 
-    [MenuItem("Cogs/Scriptable Object Factory")]
+    [MenuItem("Beetle/Scriptable Object Factory")]
     static void Init()
     {
         ScriptableObjectFactory window = (ScriptableObjectFactory)EditorWindow.GetWindow(typeof(ScriptableObjectFactory));

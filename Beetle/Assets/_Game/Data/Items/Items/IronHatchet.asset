@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95000d5da52272f4189ac1533dd2ebc9, type: 3}
   m_Name: IronHatchet
   m_EditorClassIdentifier: 
-  Name: 
-  Description: 
+  Name: Iron Hatchet
+  Description: Used to chop down pine trees
   StackSize: 1
   Id: 4
   Icon: {fileID: 21300000, guid: bfb3016d5049b6745be98200551b3e32, type: 3}

@@ -8,7 +8,8 @@ public class CraftingRecipe : ScriptableObject
     [System.Serializable]
     public class ItemCraftData : CraftData
     {
-        public int ItemId;
+        public int ItemId => ItemData != null ? ItemData.Id : -1;
+        [ItemDataPreview] [SerializeField] private ItemData ItemData;
 
         public override bool MatchesItem(int id)
         {

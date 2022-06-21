@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab85e593f4e922743be708eead861dae, type: 3}
+  m_Name: IronPickaxeCraftingRecipe
+  m_EditorClassIdentifier: 
+  itemInput:
+  - Amount: 1
+    ItemData: {fileID: 11400000, guid: cfe1a9021fa26094c963ba5865325fb4, type: 2}
+  - Amount: 1
+    ItemData: {fileID: 11400000, guid: 10ee8f33baa9f434c8db3b9bd9f02b1c, type: 2}
+  tagInput: []
+  output:
+    Amount: 1
+    ItemData: {fileID: 11400000, guid: 301582e23a84fe749ba312537f93c0b8, type: 2}

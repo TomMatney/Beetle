@@ -353,8 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftingButtonPrefab: {fileID: 6638601359857105850, guid: 06bb1aeb8deb2ed4596e6af69d99be0a, type: 3}
-  recipes:
-  - {fileID: 11400000, guid: 5c9b21bc99c028d4b8ed3193a7fa00dc, type: 2}
+  recipes: {fileID: 11400000, guid: 63efe838268bdf04e9783e2a6c981c20, type: 2}
   holder: {fileID: 1933178134178380279}
 --- !u!1 &3907283859822786635
 GameObject:

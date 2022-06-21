@@ -6,16 +6,16 @@ public class CraftingMenuUI : MonoBehaviour
 {
     [SerializeField] private CraftingMenuButton craftingButtonPrefab;
 
-    [SerializeField] private CraftingRecipe[] recipes;
+    [SerializeField] private RecipeDatabase recipes;
 
     [SerializeField] private RectTransform holder;
 
     void Start()
     {
-        for(int i = 0; i < recipes.Length; i++)
+        for(int i = 0; i < recipes.Recipes.Count; i++)
         {
             var button = Instantiate(craftingButtonPrefab, holder);
-            button.Initialize(recipes[i], this);
+            button.Initialize(recipes.Recipes[i], this);
         }
     }
 
