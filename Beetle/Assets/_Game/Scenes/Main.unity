@@ -3156,3 +3156,62 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: fecbc43bfd5cb7e40b92fbd3c46104b2, type: 3}
+--- !u!1001 &9216728070126433327
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9216728068777650461, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216728068777650461, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 139.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216728068777650461, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216728068777650461, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 144.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216728068777650461, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216728068777650461, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216728068777650461, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216728068777650461, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216728068777650461, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216728068777650461, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216728068777650461, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216728068777650462, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
+      propertyPath: m_Name
+      value: DeerHolder
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ec7ab6d6cefe6140919643755b47054, type: 3}
