@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     [SerializeField] private ItemDatabase itemDatabase;
+    [SerializeField] private ItemObject itemPrefab;
 
     private static ItemManager instance;
 
@@ -38,6 +39,12 @@ public class ItemManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public static void DropItem(ItemData itemData, int amount, Vector3 position)
+    {
+        var itemObject = Instantiate(instance.itemPrefab, position, instance.itemPrefab.transform.rotation);
+        itemObject.SetItemData(itemData, amount);
     }
 
     public static ItemData GetItemData(int itemId)

@@ -3,29 +3,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tree : MonoBehaviour
+public class Wildlife : MonoBehaviour
 {
-    public MMFeedbacks treeFeels;
-    public MMFeedbacks treeFall;
+    //public MMFeedbacks treeFeels;
+    public MMFeedbacks deathFeels;
 
     public ItemDropTable dropTable = new ItemDropTable();
-
-    public ResourceNodeType resourceNodeType;
-    public ResourceTier resourceTier;
 
     private void Start()
     {
         Health health = GetComponent<Health>();
-        health.damageTakenEvent.AddListener(DamageTree);
+        //health.damageTakenEvent.AddListener(DamageTree);
         health.deathEvent.AddListener(OnDeath);
     }
 
-    public void DamageTree(DamageData damageData)
+    //public void DamageTree(DamageData damageData)
+    //{
+    //    treeFeels?.PlayFeedbacks();
+    //}
+
+    private void OnDeath(DamageData damageData)
     {
-        treeFeels?.PlayFeedbacks();
+        //deathFeels?.PlayFeedbacks();
+        //GetComponent<Collider>().enabled = false;
+
+        DestroyTree();
     }
 
-    //Called from animationEvent
     protected void DestroyTree()
     {
         Destroy(gameObject);
@@ -37,11 +41,5 @@ public class Tree : MonoBehaviour
                 ItemManager.DropItem(drop.itemData, drop.amount.Random(), transform.position);
             }
         }
-    }
-
-    private void OnDeath(DamageData damageData)
-    {
-        treeFall?.PlayFeedbacks();
-        GetComponent<Collider>().enabled = false;
     }
 }

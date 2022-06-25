@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 1285219386}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 179.314, z: 0}
 --- !u!114 &5355792558964848038
 MonoBehaviour:
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: cc952f05bf4c3a54cbc245d5571fd87a, type: 2}
+  itemPrefab: {fileID: 3613710304019849117, guid: d3b71111144097e4ba6671c8007f1c1e, type: 3}
 --- !u!114 &4001197654975728338
 MonoBehaviour:
   m_ObjectHideFlags: 0

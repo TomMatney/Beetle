@@ -18,16 +18,17 @@ public class UseToolItemAction : ItemAction
         var node = health.GetComponent<Tree>();
         if (node != null)
         {
-            if(node.resourceNodeType == resourceNodeType)
+            if(node.resourceNodeType == resourceNodeType && resourceTier >= node.resourceTier)
             {
-                if(resourceTier >= node.resourceTier)
-                {
-                    health.Damage(characterData.gameObject, damageAmount, health.transform.position, health.transform.forward);
-                    return;
-                }
+                health.Damage(characterData.gameObject, damageAmount, health.transform.position, health.transform.forward);
+                return;
+            }
+            else
+            {
+                health.Damage(characterData.gameObject, 0f, health.transform.position, health.transform.forward);
             }
         }
 
-        health.Damage(characterData.gameObject, 0f, health.transform.position, health.transform.forward);
+        health.Damage(characterData.gameObject, damageAmount, health.transform.position, health.transform.forward);
     }
 }
